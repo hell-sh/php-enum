@@ -1,0 +1,13 @@
+{
+	"name": "hell-sh/enum",
+	"description": "A simple, abstract class to improve your 'enums'.",
+	"homepage": "https://github.com/hell-sh/php-enum",
+	"type": "library",
+	"license": "Unlicense",
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"require": {
+		"php": "^7.0"
+	}
+}
