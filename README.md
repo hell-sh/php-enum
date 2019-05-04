@@ -4,7 +4,7 @@ A simple, abstract class to improve your 'enums'.
 
 ## Usage
 
-1. `composer require hell-sh/enum:dev-master`
+1. `composer require hell-sh/enum ^1.0`
 2. Make your enum(s) extend `hellsh\Enum`:
     ```PHP
     namespace MyNamespace;
