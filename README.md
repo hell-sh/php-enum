@@ -16,6 +16,7 @@ A simple, abstract class to improve your 'enums'.
     }
     ```
 3. Enjoy the added methods:
-  - `MyEnum::all() : array`
-  - `MyEnum::validateName(string $name) : bool`
-  - `MyEnum::validateValue($value) : bool`
+  - `MyEnum::valueOf(string $name)`
+  - `MyEnum::all(): array`
+  - `MyEnum::validateName(string $name): bool`
+  - `MyEnum::validateValue($value): bool`
