@@ -1,21 +1,15 @@
 <?php
 namespace hellsh;
+use ReflectionClass;
+use ReflectionException;
 abstract class Enum
 {
-	/**
-	 * Returns an array with all keys and their values of this enum.
-	 *
-	 * @return array
-	 */
-	static function all(): array
-	{
-		return (new \ReflectionClass(get_called_class()))->getConstants();
-	}
-
 	/**
 	 * Returns the value of the constant with the given name or null if it doesn't exist.
 	 *
 	 * @param string $name The name of the constant. Case sensitive!
+	 * @return mixed
+	 * @throws ReflectionException
 	 */
 	static function valueOf(string $name)
 	{
@@ -23,10 +17,22 @@ abstract class Enum
 	}
 
 	/**
+	 * Returns an array with all keys and their values of this enum.
+	 *
+	 * @return array
+	 * @throws ReflectionException
+	 */
+	static function all(): array
+	{
+		return (new ReflectionClass(get_called_class()))->getConstants();
+	}
+
+	/**
 	 * Returns true if this enum has a constant with the given name.
 	 *
 	 * @param string $name The name of the constant. Case sensitive!
 	 * @return boolean
+	 * @throws ReflectionException
 	 */
 	static function validateName(string $name): bool
 	{
@@ -38,6 +44,7 @@ abstract class Enum
 	 *
 	 * @param mixed $value
 	 * @return boolean
+	 * @throws ReflectionException
 	 */
 	static function validateValue($value): bool
 	{
