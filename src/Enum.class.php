@@ -9,7 +9,6 @@ abstract class Enum
 	 *
 	 * @param string $name The name of the constant. Case sensitive!
 	 * @return mixed
-	 * @throws ReflectionException
 	 */
 	static function valueOf(string $name)
 	{
@@ -20,7 +19,6 @@ abstract class Enum
 	 * Returns an array with all keys and their values of this enum.
 	 *
 	 * @return array
-	 * @throws ReflectionException
 	 */
 	static function all(): array
 	{
@@ -32,7 +30,6 @@ abstract class Enum
 	 *
 	 * @param string $name The name of the constant. Case sensitive!
 	 * @return boolean
-	 * @throws ReflectionException
 	 */
 	static function validateName(string $name): bool
 	{
@@ -44,7 +41,6 @@ abstract class Enum
 	 *
 	 * @param mixed $value
 	 * @return boolean
-	 * @throws ReflectionException
 	 */
 	static function validateValue($value): bool
 	{
