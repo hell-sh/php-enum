@@ -1,7 +1,6 @@
-<?php
+<?php /** @noinspection PhpDocMissingThrowsInspection PhpUnhandledExceptionInspection */
 namespace hellsh;
 use ReflectionClass;
-use ReflectionException;
 abstract class Enum
 {
 	/**
@@ -9,6 +8,7 @@ abstract class Enum
 	 *
 	 * @param string $name The name of the constant. Case sensitive!
 	 * @return mixed
+	 * @since 1.1
 	 */
 	static function valueOf(string $name)
 	{
@@ -23,6 +23,25 @@ abstract class Enum
 	static function all(): array
 	{
 		return (new ReflectionClass(get_called_class()))->getConstants();
+	}
+
+	/**
+	 * Returns the name of the first constant with the given value or null if none is found.
+	 *
+	 * @param mixed $value
+	 * @return string|null
+	 * @since 1.2
+	 */
+	static function nameOf($value): ?string
+	{
+		foreach(static::all() as $enum_name => $enum_value)
+		{
+			if($enum_value === $value)
+			{
+				return $enum_name;
+			}
+		}
+		return null;
 	}
 
 	/**
